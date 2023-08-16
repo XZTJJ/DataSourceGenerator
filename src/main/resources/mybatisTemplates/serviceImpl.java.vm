@@ -1,0 +1,13 @@
+package ${package}.service.impl;
+
+import org.springframework.stereotype.Service;
+import ${package}.service.${className}Service;
+/**
+ * @author ${author}
+ * @version 1.0
+ * @desc
+ * @date ${datetime}
+ */
+@Service
+public class ${className}ServiceImpl implements ${className}Service {
+}

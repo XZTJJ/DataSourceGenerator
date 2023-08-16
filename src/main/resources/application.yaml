@@ -1,0 +1,36 @@
+server:
+  port: 9098
+spring:
+  datasource:
+    username: 'root'
+    password: '123456'
+    url: 'jdbc:mysql://127.0.0.1:3306/xiaohaizi?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8'
+    driver-class-name: 'com.mysql.cj.jdbc.Driver'
+mybatis:
+  mapper-locations: 'classpath:mapper/*.xml'
+table:
+  config:
+    packageName: 'demo'
+    author: 'demo'
+    email: 'demo'
+    tablePrefix: 'demo'
+    typeMapping:
+      - 'tinyint=Byte'
+      - 'smallint=Integer'
+      - 'mediumint=Integer'
+      - 'int=Integer'
+      - 'integer=Integer'
+      - 'bigint=Long'
+      - 'float=Float'
+      - 'double=Double'
+      - 'decimal=BigDecimal'
+      - 'bit=Boolean'
+      - 'char=String'
+      - 'varchar=String'
+      - 'tinytext=String'
+      - 'text=String'
+      - 'mediumtext=String'
+      - 'longtext=String'
+      - 'date=LocalDate'
+      - 'datetime=LocalDateTime'
+      - 'timestamp=LocalDateTime'
