@@ -6,7 +6,6 @@ import com.zhouhc.generator.dto.ColumnDTO;
 import com.zhouhc.generator.dto.JavaFileDTO;
 import com.zhouhc.generator.dto.RequestDTO;
 import com.zhouhc.generator.dto.TableDTO;
-import org.apache.commons.lang.StringUtils;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
@@ -175,13 +174,14 @@ public class DataGeneratorUtil {
     private static String columnName2JavaName(String column) {
         column = StrUtil.toCamelCase(column);
         column = StrUtil.toCamelCase(column, '-');
+        column = StrUtil.lowerFirst(column);
         return column;
     }
 
     //表名的驼峰转换，只是处理_,-的情况
     private static String tableName2JavaName(String table, String tablePrefix) {
-        if (StrUtil.isEmpty(tablePrefix))
-            StrUtil.replace(table, tablePrefix, "");
+        if (StrUtil.isNotEmpty(tablePrefix))
+            table = StrUtil.replace(table, tablePrefix, "");
         table = StrUtil.toCamelCase(table);
         table = StrUtil.toCamelCase(table, '-');
         table = StrUtil.upperFirst(table);
